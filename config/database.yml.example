@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  port: 5432
+  encoding: utf8
+  max_connections: 5
+
+development:
+  <<: *default
+  database: directory_tree_development
+  user:
+  password:
+
+test:
+  <<: *default
+  database: directory_tree_test
+  user:
+  password:

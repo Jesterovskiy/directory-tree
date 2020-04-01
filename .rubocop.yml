@@ -1,5 +1,4 @@
 require:
-  - 'rubocop-sequel'
   - 'rubocop-gitlab-security'
   - 'rubocop-performance'
   - 'rubocop-rails'
@@ -15,6 +14,12 @@ AllCops:
       - 'bin/*'
       - 'lib/tasks/**/*'
       - 'vendor/**/*'
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
 
 Style/AccessModifierDeclarations:
   Enabled: false
