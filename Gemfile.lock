@@ -1,3 +1,8 @@
+PATH
+  remote: lib/mat_path
+  specs:
+    mat_path (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -263,6 +268,7 @@ DEPENDENCIES
   faker
   faraday
   listen (>= 3.0.5, < 3.2)
+  mat_path!
   pg (>= 1.2.3)
   pry
   pry-byebug

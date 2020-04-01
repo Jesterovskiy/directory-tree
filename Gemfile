@@ -22,6 +22,8 @@ gem 'sass-rails', '>= 6'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'mat_path', path: 'lib/mat_path'
+
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
