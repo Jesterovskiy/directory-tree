@@ -8,6 +8,8 @@ Sequel.migration do
       column :name, :text, null: false, default: nil
       column :path, :'integer[]', null: false, default: Sequel.pg_array([], :integer)
 
+      index :path
+
       column :created_at, :timestamp
       column :updated_at, :timestamp
     end

@@ -6,6 +6,8 @@ Sequel.migration do
       column :path, "integer[]", :default=>Sequel::LiteralString.new("'{}'::integer[]"), :null=>false
       column :created_at, "timestamp without time zone"
       column :updated_at, "timestamp without time zone"
+      
+      index [:path]
     end
     
     create_table(:schema_migrations) do
