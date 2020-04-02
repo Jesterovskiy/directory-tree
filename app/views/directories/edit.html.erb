@@ -1,3 +1,11 @@
-<%= render 'form', directory: @directory %>
+<h2>Directory</h2>
 
+<%= form_for @directory do |form| %>
+  <div class="field">
+    <%= form.text_field :name %>
+    <%= form.submit 'Save' %>
+  </div>
+<% end %>
+
+<%= link_to 'Delete', delete_directory_path(@directory) %>
 <%= link_to 'Back', directories_path %>

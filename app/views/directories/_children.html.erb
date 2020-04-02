@@ -1,6 +1,6 @@
 <div style="<%= style %>">
   <% children.each do |directory| %>
-    |-- <%= directory.name %>
+    |-- <%= link_to directory.name, edit_directory_path(directory)  %>
     <%= render partial: 'children', locals: { parent: directory, children: directory.children, style: "padding-left:15px" } %>
   <% end %>
 </div>

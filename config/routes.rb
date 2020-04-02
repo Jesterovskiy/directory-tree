@@ -3,5 +3,7 @@
 Rails.application.routes.draw do
   root 'directories#index'
 
-  resources :directories
+  resources :directories, except: :destroy do
+    get :delete, on: :member
+  end
 end

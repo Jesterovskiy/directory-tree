@@ -5,7 +5,12 @@ module MatPath
     module InstanceMethods
       def children
         self.class.where(Sequel.pg_array(:path).contains(path))
-            .exclude(path: Sequel.pg_array(path))
+            .where(Sequel.pg_array(:path).length => path.count + 1)
+            .exclude(path: Sequel.pg_array(path)).order(:created_at)
+      end
+
+      def destroy_all
+        self.class.where(Sequel.pg_array(:path).contains(path)).destroy
       end
 
       def after_create

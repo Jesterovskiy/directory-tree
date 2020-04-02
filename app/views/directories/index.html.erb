@@ -1,6 +1,8 @@
+<h2>Directory Tree</h2>
+
 <% @directories.each do |directory| %>
   <div>
-    |-- <%= directory.name %>
+    |-- <%= link_to directory.name, edit_directory_path(directory)   %>
     <%= render partial: 'children', locals: { parent: directory, children: directory.children, style: "padding-left:15px" } %>
   </div>
 <% end %>
