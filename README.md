@@ -1,24 +1,45 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+- Required Ruby version is 2.7.0
+- The project uses a >PostgreSQL9.6 database
 
-* Ruby version
+## Setup
 
-* System dependencies
+1. Git clone project.
+2. Install gem bundler:
 
-* Configuration
+    ```shell script
+    gem install bundler
+    ```
 
-* Database creation
+3. Run bundler:
 
-* Database initialization
+    ```shell script
+    bundle install
+    ```
 
-* How to run the test suite
+4. Create database.yml:
 
-* Services (job queues, cache servers, search engines, etc.)
+    ```shell script
+    cp config/database.yml.example config/database.yml
+    ```
 
-* Deployment instructions
+5. Create database:
 
-* ...
+    ```shell script
+    rails db:create
+    ```
+
+6. Run migrations
+
+    ```shell script
+    rails db:migrate
+    ```
+
+## Run App
+
+```shell script
+  rails s
+```

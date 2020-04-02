@@ -2,6 +2,9 @@
 
 module MatPath
   module Plugin
+    ##
+    # Module: Methods that applied to model instance
+    #
     module InstanceMethods
       def children
         self.class.where(Sequel.pg_array(:path).contains(path))
