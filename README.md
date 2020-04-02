@@ -2,7 +2,7 @@
 
 ## Requirements
 
-- Required Ruby version is 2.7.0
+- Required Ruby version is 2.7.1
 - The project uses a >PostgreSQL9.6 database
 
 ## Setup
