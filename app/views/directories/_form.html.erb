@@ -1,0 +1,10 @@
+<div style="<%= style %>">
+  <%= form_with(url: directories_path, scope: :directory) do |form| %>
+    <div class="field">
+      |-- <%= form.text_field :name %>
+      <%= form.submit %>
+    </div>
+
+    <%= form.hidden_field :path, value: path %>
+  <% end %>
+</div>

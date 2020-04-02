@@ -1,0 +1,7 @@
+<div style="<%= style %>">
+  <% children.each do |directory| %>
+    |-- <%= directory.name %>
+    <%= render partial: 'children', locals: { parent: directory, children: directory.children, style: "padding-left:15px" } %>
+  <% end %>
+</div>
+<%= render partial: 'form', locals: { path: parent.path, style: "padding-left:15px" }%>

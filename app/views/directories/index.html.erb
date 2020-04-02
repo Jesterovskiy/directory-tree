@@ -1,0 +1,8 @@
+<% @directories.each do |directory| %>
+  <div>
+    |-- <%= directory.name %>
+    <%= render partial: 'children', locals: { parent: directory, children: directory.children, style: "padding-left:15px" } %>
+  </div>
+<% end %>
+
+<%= render partial: 'form', locals: { path: [], style: "" }%>

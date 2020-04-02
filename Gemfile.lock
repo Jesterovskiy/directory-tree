@@ -6,23 +6,6 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    actioncable (6.0.2.2)
-      actionpack (= 6.0.2.2)
-      nio4r (~> 2.0)
-      websocket-driver (>= 0.6.1)
-    actionmailbox (6.0.2.2)
-      actionpack (= 6.0.2.2)
-      activejob (= 6.0.2.2)
-      activerecord (= 6.0.2.2)
-      activestorage (= 6.0.2.2)
-      activesupport (= 6.0.2.2)
-      mail (>= 2.7.1)
-    actionmailer (6.0.2.2)
-      actionpack (= 6.0.2.2)
-      actionview (= 6.0.2.2)
-      activejob (= 6.0.2.2)
-      mail (~> 2.5, >= 2.5.4)
-      rails-dom-testing (~> 2.0)
     actionpack (6.0.2.2)
       actionview (= 6.0.2.2)
       activesupport (= 6.0.2.2)
@@ -30,31 +13,14 @@ GEM
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actiontext (6.0.2.2)
-      actionpack (= 6.0.2.2)
-      activerecord (= 6.0.2.2)
-      activestorage (= 6.0.2.2)
-      activesupport (= 6.0.2.2)
-      nokogiri (>= 1.8.5)
     actionview (6.0.2.2)
       activesupport (= 6.0.2.2)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activejob (6.0.2.2)
-      activesupport (= 6.0.2.2)
-      globalid (>= 0.3.6)
     activemodel (6.0.2.2)
       activesupport (= 6.0.2.2)
-    activerecord (6.0.2.2)
-      activemodel (= 6.0.2.2)
-      activesupport (= 6.0.2.2)
-    activestorage (6.0.2.2)
-      actionpack (= 6.0.2.2)
-      activejob (= 6.0.2.2)
-      activerecord (= 6.0.2.2)
-      marcel (~> 0.3.1)
     activesupport (6.0.2.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -96,8 +62,6 @@ GEM
     faraday (1.0.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
-    globalid (0.4.2)
-      activesupport (>= 4.2.0)
     hashdiff (1.0.1)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
@@ -109,13 +73,7 @@ GEM
     loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.1)
-      mini_mime (>= 0.1.1)
-    marcel (0.3.3)
-      mimemagic (~> 0.3.2)
     method_source (1.0.0)
-    mimemagic (0.3.4)
-    mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
     msgpack (1.3.3)
@@ -141,21 +99,6 @@ GEM
     rack (2.2.2)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rails (6.0.2.2)
-      actioncable (= 6.0.2.2)
-      actionmailbox (= 6.0.2.2)
-      actionmailer (= 6.0.2.2)
-      actionpack (= 6.0.2.2)
-      actiontext (= 6.0.2.2)
-      actionview (= 6.0.2.2)
-      activejob (= 6.0.2.2)
-      activemodel (= 6.0.2.2)
-      activerecord (= 6.0.2.2)
-      activestorage (= 6.0.2.2)
-      activesupport (= 6.0.2.2)
-      bundler (>= 1.3.0)
-      railties (= 6.0.2.2)
-      sprockets-rails (>= 2.0.0)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -219,6 +162,17 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sequel (5.31.0)
+    sequel-rails (1.1.0)
+      actionpack (>= 4.0.0)
+      activemodel (>= 4.0.0)
+      railties (>= 4.0.0)
+      sequel (>= 3.28, < 6.0)
+    sequel_pg (1.12.5)
+      pg (>= 0.18.0, != 1.2.0)
+      sequel (>= 4.38.0)
+    sequel_postgresql_triggers (1.5.0)
+      sequel
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -249,15 +203,15 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    websocket-driver (0.7.1)
-      websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
     zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack (~> 6.0.2)
+  activemodel (~> 6.0.2)
+  activesupport (~> 6.0.2)
   better_errors
   binding_of_caller
   bootsnap (>= 1.4.2)
@@ -269,18 +223,21 @@ DEPENDENCIES
   faraday
   listen (>= 3.0.5, < 3.2)
   mat_path!
-  pg (>= 1.2.3)
   pry
   pry-byebug
   pry-rails
   puma (~> 4.1)
-  rails (~> 6.0.2, >= 6.0.2.2)
+  railties (~> 6.0.2)
   rspec-rails (>= 4.0.0.beta4)
   rubocop
   rubocop-gitlab-security
   rubocop-performance
   rubocop-rails
   sass-rails (>= 6)
+  sequel (~> 5.26)
+  sequel-rails (~> 1.1)
+  sequel_pg
+  sequel_postgresql_triggers
   simplecov
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -3,10 +3,20 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
-# Use postgresql as the database for Active Record
-gem 'pg', '>= 1.2.3'
+BUNDLE_RAILS_VERSION = '~> 6.0.2'
+
+# Rails
+gem 'actionpack',    BUNDLE_RAILS_VERSION
+gem 'activemodel',   BUNDLE_RAILS_VERSION
+gem 'activesupport', BUNDLE_RAILS_VERSION
+gem 'railties',      BUNDLE_RAILS_VERSION
+
+# Database
+gem 'sequel', '~> 5.26'
+gem 'sequel-rails', '~> 1.1'
+gem 'sequel_pg', require: 'sequel'
+gem 'sequel_postgresql_triggers'
+
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
