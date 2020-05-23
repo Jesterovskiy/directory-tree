@@ -20,7 +20,7 @@ gem 'sequel_pg', require: 'sequel'
 gem 'sequel_postgresql_triggers'
 
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
